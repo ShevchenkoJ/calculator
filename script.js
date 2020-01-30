@@ -10,10 +10,14 @@ let operationType;
 
 operationsArray.forEach(function(item, i) {
     operationsArray[i].addEventListener("click", operationButtonClick);
+    operationsArray[i].addEventListener("touchstart", operationButtonClick);
     operationsArray[i].addEventListener("click", cleanValue);
+    operationsArray[i].addEventListener("touchstart", cleanValue);
 });
 
 calculateButton.addEventListener("click", calculateButtonClick);
+calculateButton.addEventListener("touchstart", calculateButtonClick);
+
 
 function operationButtonClick(event) {
     operationType = event.target.id;
