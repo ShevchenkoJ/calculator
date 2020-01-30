@@ -10,10 +10,20 @@ let operationType;
 
 operationsArray.forEach(function(item, i) {
     operationsArray[i].addEventListener("click", operationButtonClick);
+    //operationsArray[i].addEventListener("click", clickCheck);
     operationsArray[i].addEventListener("touchstart", operationButtonClick);
+    operationsArray[i].addEventListener("touchstart", touchCheck);
     operationsArray[i].addEventListener("click", cleanValue);
     operationsArray[i].addEventListener("touchstart", cleanValue);
 });
+
+function touchCheck() {
+    alert("Congrats! Touch works!");
+}
+
+// function clickCheck() {
+//     alert("Congrats! Touch works!");
+// }
 
 calculateButton.addEventListener("click", calculateButtonClick);
 calculateButton.addEventListener("touchstart", calculateButtonClick);
