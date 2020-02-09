@@ -25,10 +25,7 @@ resetButton.addEventListener(config.click, resetButtonClick);
 
 function operationButtonClick(event) {
     getOperationType();
-    //console.log(operationType, "in click func");
-    //result = valuesInput.value;
     updateCurrentResult();
-    console.log(result, "old click func");
     cleanValue();
     addFocus();
 }
@@ -70,12 +67,10 @@ function operationCheck(operation, argument1, argument2) {
 
 function getOperationType() {
     operationType = event.target.id;
-    //console.log(operationType, "in getOpType Func");
 }
 
 function updateCurrentResult() {
     result = valuesInput.value;
-    console.log(result, "new upd func");
 }
 
 function cleanValue() {
@@ -89,5 +84,4 @@ function addFocus() {
 function resetAll() {
     result = 0;
     valuesInput.value = "";
-    console.log(result, "reset");
 }
