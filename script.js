@@ -24,8 +24,11 @@ calculateButton.addEventListener(config.click, calculateButtonClick);
 resetButton.addEventListener(config.click, resetButtonClick);
 
 function operationButtonClick(event) {
-    operationType = event.target.id;
-    result = valuesInput.value;
+    getOperationType();
+    //console.log(operationType, "in click func");
+    //result = valuesInput.value;
+    updateCurrentResult();
+    console.log(result, "old click func");
     cleanValue();
     addFocus();
 }
@@ -63,6 +66,16 @@ function operationCheck(operation, argument1, argument2) {
     }
 
     return result;  
+}
+
+function getOperationType() {
+    operationType = event.target.id;
+    //console.log(operationType, "in getOpType Func");
+}
+
+function updateCurrentResult() {
+    result = valuesInput.value;
+    console.log(result, "new upd func");
 }
 
 function cleanValue() {
