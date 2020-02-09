@@ -1,0 +1,23 @@
+{
+  "name": "js-calculator",
+  "version": "1.0.0",
+  "description": "Extendable JavaScript Calculator",
+  "main": "script.js",
+  "dependencies": {
+    "http-server": "^0.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShevchenkoJ/calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShevchenkoJ/calculator/issues"
+  },
+  "homepage": "https://github.com/ShevchenkoJ/calculator#readme"
+}

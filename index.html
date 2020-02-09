@@ -9,20 +9,31 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div class="title_wrapper">
-        <h1 class="title">Calculator</h1>
-    </div>
-    <div class="input-fields_wrapper">
+    <div class="container">
+        <div class="inner_container">
+            <div class="title_wrapper">
+                <h1 class="title">Calculator</h1>
+            </div>
+            <div class="fields_wrapper">
 
-        <input type="number" class="field" id="result" name="result">
+                <div class="input_wrapper">
 
-        <button type="button" id="plus" class="operation-button">+</button>
-        <button type="button" id="minus" class="operation-button">-</button>
-        <button type="button" id="multiple" class="operation-button">*</button>
-        <button type="button" id="divide" class="operation-button">/</button>
+                    <input type="number" class="field" id="result" name="result">
 
-        <button type="button" id="calculate" class="result-button">=</button>
+                </div>
 
+                <div class="buttons_wrapper">
+
+                    <button type="button" id="plus" class="operation-button">+</button>
+                    <button type="button" id="minus" class="operation-button">-</button>
+                    <button type="button" id="multiple" class="operation-button">*</button>
+                    <button type="button" id="divide" class="operation-button">/</button>
+
+                    <button type="button" id="calculate" class="result-button">=</button>
+
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

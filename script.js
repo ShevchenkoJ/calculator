@@ -20,10 +20,6 @@ operationsArray.forEach(function(item, i) {
     operationsArray[i].addEventListener(config.click, cleanValue);
 });
 
-function touchCheck() {
-    alert("Congrats! Touch works!");
-}
-
 calculateButton.addEventListener(config.click, calculateButtonClick);
 
 function operationButtonClick(event) {
@@ -58,11 +54,11 @@ function operationCheck(operation, argument1, argument2) {
             alert("press +, -, *, / or =");
             break;
     }
+
     return result;  
 }
 
 function cleanValue() {
     valuesInput.value = "";
 }
-
-    
+ 
