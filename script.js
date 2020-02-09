@@ -18,23 +18,13 @@ let operationType;
 operationsArray.forEach(function(item, i) {
     operationsArray[i].addEventListener(config.click, operationButtonClick);
     operationsArray[i].addEventListener(config.click, cleanValue);
-    //operationsArray[i].addEventListener("click", clickCheck);
-
-    // operationsArray[i].addEventListener("touchend", operationButtonClick);
-    // operationsArray[i].addEventListener("touchend", cleanValue);
-    // operationsArray[i].addEventListener("touchend", touchCheck);
 });
 
 function touchCheck() {
     alert("Congrats! Touch works!");
 }
 
-// function clickCheck() {
-//     alert("Congrats! Touch works!");
-// }
-
 calculateButton.addEventListener(config.click, calculateButtonClick);
-// calculateButton.addEventListener("touchend", calculateButtonClick);
 
 function operationButtonClick(event) {
     operationType = event.target.id;
