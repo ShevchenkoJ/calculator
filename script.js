@@ -23,10 +23,10 @@ operationsArray.forEach(function(item, i) {
 calculateButton.addEventListener(config.click, calculateButtonClick);
 resetButton.addEventListener(config.click, resetButtonClick);
 
-function operationButtonClick(event) {
-    getOperationType();
+function operationButtonClick(triggerEvent) {
+    getOperationType(triggerEvent.target.id);
     updateCurrentResult();
-    cleanValue();
+    cleanInputValue();
     addFocus();
 }
 
@@ -65,15 +65,15 @@ function operationCheck(operation, argument1, argument2) {
     return result;  
 }
 
-function getOperationType() {
-    operationType = event.target.id;
+function getOperationType(operation) {
+    operationType = operation;
 }
 
 function updateCurrentResult() {
     result = valuesInput.value;
 }
 
-function cleanValue() {
+function cleanInputValue() {
     valuesInput.value = "";
 }
  
@@ -83,5 +83,5 @@ function addFocus() {
 
 function resetAll() {
     result = 0;
-    valuesInput.value = "";
+    cleanInputValue();
 }
