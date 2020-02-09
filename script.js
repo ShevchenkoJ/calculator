@@ -11,24 +11,31 @@ const config = {
 const operationsArray = Array.from(document.getElementsByClassName("operation-button"));
 const calculateButton = document.getElementById("calculate");
 const valuesInput = document.getElementById("result");
+const resetButton = document.getElementById("reset");
 
 let result = 0;
 let operationType; 
 
 operationsArray.forEach(function(item, i) {
     operationsArray[i].addEventListener(config.click, operationButtonClick);
-    operationsArray[i].addEventListener(config.click, cleanValue);
 });
 
 calculateButton.addEventListener(config.click, calculateButtonClick);
+resetButton.addEventListener(config.click, resetButtonClick);
 
 function operationButtonClick(event) {
     operationType = event.target.id;
     result = valuesInput.value;
+    cleanValue();
+    addFocus();
 }
 
 function calculateButtonClick(event) {
     valuesInput.value = operationCheck(operationType, result, valuesInput.value);
+}
+
+function resetButtonClick() {
+    resetAll();
 }
 
 function operationCheck(operation, argument1, argument2) {
@@ -62,3 +69,12 @@ function cleanValue() {
     valuesInput.value = "";
 }
  
+function addFocus() {
+    valuesInput.focus(); 
+}
+
+function resetAll() {
+    result = 0;
+    valuesInput.value = "";
+    console.log(result, "reset");
+}
