@@ -149,10 +149,10 @@ body {
 }
 
 @media only screen and (max-width: 520px) {
-    .button-commons {
+    .button-common {
         max-width: 100px;
         flex: 0 0 35%;
-        margin-top: 15px;
+        margin-bottom: 15px;
     }
     .buttons_wrapper {
         margin-top: 15px;
