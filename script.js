@@ -14,6 +14,8 @@ const valuesInput = document.getElementById("result");
 const resetButton = document.getElementById("reset");
 
 let result = 0;
+console.log(result, "Global");
+
 let operationType; 
 
 operationsArray.forEach(function(item, i) {
@@ -25,36 +27,46 @@ resetButton.addEventListener(config.click, resetButtonClick);
 
 function operationButtonClick(triggerEvent) {
     getOperationType(triggerEvent.target.id);
-    updateCurrentResult();
+    updateCurrentValue();
     cleanInputValue();
-    addFocus();
+    setFocus();
 }
 
 function calculateButtonClick(event) {
-    valuesInput.value = operationCheck(operationType, result, valuesInput.value);
+    //if ()
+    valuesInput.value = doCalculation(operationType, result, valuesInput.value);
 }
 
 function resetButtonClick() {
     resetAll();
 }
 
-function operationCheck(operation, argument1, argument2) {
+function doCalculation(operation, argument1, argument2) {
+    
     let result = 0;
+    //let result; //= valuesInput.value;
+
+    console.log(result, "doCalculation, starting point - was always 0");
+
     switch (operation) {
         case "plus":
             result = parseFloat(argument1) + parseFloat(argument2);
+            console.log(result, "doCalculation, plus");
             break;
     
         case "minus":
             result = parseFloat(argument1) - parseFloat(argument2);
+            console.log(result, "doCalculation, minus");
             break;
 
         case "multiple":
             result = parseFloat(argument1) * parseFloat(argument2);
+            console.log(result, "doCalculation, multiplication");
             break;
         
         case "divide":
             result = parseFloat(argument1) / parseFloat(argument2);
+            console.log(result, "doCalculation, division");
             break;
 
         default:
@@ -62,26 +74,24 @@ function operationCheck(operation, argument1, argument2) {
             break;
     }
 
+    console.log(result, "doCalculation, final point");
     return result;  
+
 }
 
 function getOperationType(operation) {
     operationType = operation;
 }
 
-function updateCurrentResult() {
+function updateCurrentValue() {
     result = valuesInput.value;
+    console.log(result, "getOperationType, put input into result");
+}
+
+function setFocus() {
+    valuesInput.focus();
 }
 
 function cleanInputValue() {
     valuesInput.value = "";
-}
- 
-function addFocus() {
-    valuesInput.focus(); 
-}
-
-function resetAll() {
-    result = 0;
-    cleanInputValue();
 }
