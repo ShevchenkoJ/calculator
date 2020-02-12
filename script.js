@@ -92,10 +92,8 @@ function getOperationType(operation) {
 }
 
 function updateCurrentValue() {
-    if (result != 0) {
     result = valuesInput.value;
     console.log(result, "getOperationType, put input into result");
-    }
 }
 
 function setFocus() {
