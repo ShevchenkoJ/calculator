@@ -14,9 +14,10 @@ const valuesInput = document.getElementById("result");
 const resetButton = document.getElementById("reset");
 
 let result = 0;
-console.log(result, "Global");
 
 let operationType; 
+
+let calculationButtonIsClicked = false;
 
 operationsArray.forEach(function(item, i) {
     operationsArray[i].addEventListener(config.click, operationButtonClick);
@@ -30,11 +31,18 @@ function operationButtonClick(triggerEvent) {
     updateCurrentValue();
     cleanInputValue();
     setFocus();
+    calculationButtonIsClicked = false;
 }
 
 function calculateButtonClick(event) {
-    //if ()
-    valuesInput.value = doCalculation(operationType, result, valuesInput.value);
+    if (!calculationButtonIsClicked) {
+        calculationButtonIsClicked = true;
+        valuesInput.value = doCalculation(operationType, result, valuesInput.value);
+    }
+
+    // if (calculationButtonIsClicked) return;
+    // calculationButtonIsClicked = true;
+    // valuesInput.value = doCalculation(operationType, result, valuesInput.value);
 }
 
 function resetButtonClick() {
@@ -84,8 +92,10 @@ function getOperationType(operation) {
 }
 
 function updateCurrentValue() {
+    if (result != 0) {
     result = valuesInput.value;
     console.log(result, "getOperationType, put input into result");
+    }
 }
 
 function setFocus() {
