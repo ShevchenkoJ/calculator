@@ -103,3 +103,8 @@ function setFocus() {
 function cleanInputValue() {
     valuesInput.value = "";
 }
+
+function resetAll() {
+    result = 0;
+    cleanInputValue();
+}
